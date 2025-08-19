@@ -1,0 +1,58 @@
+entidades:
+
+
+=== PET
+enum Age {
+  PUPPY
+  ADULT
+  SENIOR
+}
+
+enum Size {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+enum EnergyLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum IndependenceLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum EnvironmentType {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+
+- id - uuid
+- about - string
+- name - string
+- age - AGE
+- size - Size
+- images - string[]
+- created_at
+- ambient - EnvironmentType
+- energy_level - EnergyLevel
+- level_independence - IndependenceLevel
+
+=== ORGANIZATION
+
+- id - uuid
+- email - string
+- password - string
+- responsible_name - string
+- CEP - string
+- address - string
+- whatsapp - string
+- city - string
+
+
