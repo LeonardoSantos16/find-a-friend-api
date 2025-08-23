@@ -6,7 +6,7 @@ export type OrganizationProps = {
   address: string
   whatsapp: string
   city: string
-  createdAt: Date
+  createdAt?: Date
 }
 
 export class Organization {

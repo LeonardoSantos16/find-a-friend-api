@@ -1,14 +1,15 @@
-import { Prisma, Pet } from '@/generated/prisma'
+import { Pet } from '@/domain/entities/pet'
+import { EnergyLevel, IndependenceLevel, Size } from '@/generated/prisma'
 
 export interface FindManyByParams {
   city?: string
-  level_independence?: string
-  energy_level?: string
-  size?: string
+  size?: Size
+  energy_level?: EnergyLevel
+  level_independence?: IndependenceLevel
 }
 
 export interface PetRepository {
-  create(data: Prisma.PetCreateInput): Promise<Pet>
-  findById(id: string): Promise<Pet>
+  create(data: Pet): Promise<void>
+  findById(id: string): Promise<Pet | null>
   findManyByFilter(params: FindManyByParams): Promise<Pet[]>
 }

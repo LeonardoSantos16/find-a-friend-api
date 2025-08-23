@@ -10,6 +10,16 @@ export class PrismaOrganizationsRepository implements OrgsRepository {
       data,
     })
   }
+
+  async findByEmail(email: string): Promise<Organization | null> {
+    const org = await prisma.organization.findUnique({ where: { email } })
+    if (!org) {
+      return null
+    }
+
+    return PrismaOrganizationMapper.toDomain(org)
+  }
+
   async findById(id: string): Promise<Organization | null> {
     const organization = await prisma.organization.findUnique({ where: { id } })
     if (!organization) {
