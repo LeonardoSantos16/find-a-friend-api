@@ -3,7 +3,7 @@ import { EnergyLevel, IndependenceLevel, Size } from '@/generated/prisma'
 import { FindManyByParams, PetRepository } from '@/repositories/pets-repository'
 
 export interface FindByFilterPetUseCaseRequest {
-  city: string
+  city?: string
   independence_level?: IndependenceLevel
   energy_level?: EnergyLevel
   size?: Size
